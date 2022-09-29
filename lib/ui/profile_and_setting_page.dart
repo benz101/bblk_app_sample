@@ -27,7 +27,7 @@ class ProfileAndSettingPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-         iconTheme:const IconThemeData(color: ColorHelper.colorPrimary),
+        iconTheme: const IconThemeData(color: ColorHelper.colorPrimary),
         title: Container(
           height: 100,
           color: Colors.transparent,
@@ -39,7 +39,9 @@ class ProfileAndSettingPage extends StatelessWidget {
               child: Row(
                 children: [
                   SvgPicture.asset('assets/images/ic_chart.svg'),
-                  const SizedBox(width: 20,),
+                  const SizedBox(
+                    width: 20,
+                  ),
                   SvgPicture.asset('assets/images/ic_notif.svg')
                 ],
               )),
@@ -187,8 +189,80 @@ class ProfileAndSettingPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 114,
+      padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
           color: ColorHelper.blueAlt, borderRadius: BorderRadius.circular(30)),
+      alignment: Alignment.center,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+            width: double.infinity,
+            height: 50,
+            color: Colors.transparent,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                      color: Colors.grey[300], shape: BoxShape.circle),
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                      text: const TextSpan(
+                          text: 'Angga ',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white),
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'Praja',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white),
+                            )
+                          ]),
+                    ),
+                    const Text(
+                      'Membership BBLK',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            decoration: const BoxDecoration(
+                color: Color(0XFF1A3E78),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20))),
+            child:const  Text(
+              'Lengkapi profile anda untuk memaksimalkan penggunaan aplikasi',
+              style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white),
+            ),
+          )
+        ],
+      ),
     );
   }
 
